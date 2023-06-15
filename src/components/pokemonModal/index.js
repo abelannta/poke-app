@@ -68,7 +68,7 @@ function PokemonModal({ openModal, setOpenModal, data }) {
           </div>
         </Descriptions.Item>
         <Descriptions.Item label="Items">
-          {data?.held_items.length === 0 ? (
+          {data?.held_items?.length === 0 ? (
             <p>Tidak ada item</p>
           ) : (
             <div className="flex-row">
