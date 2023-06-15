@@ -42,7 +42,7 @@ function PokemonCard({ item }) {
           </div>
           <div className="flex-row">
             {item?.abilities?.map((item, i) => (
-              <div className="pokemon-stats-badge">
+              <div className="pokemon-stats-badge" key={i}>
                 <span style={{ fontWeight: 700 }}>{item.ability.name}</span>
               </div>
             ))}

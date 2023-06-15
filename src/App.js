@@ -16,6 +16,7 @@ function App() {
   });
   const [modalOpen, setModalOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [pokemonModalData, setPokemonModalData] = useState({});
   const [pokemon, setPokemon] = useState([]);
   const [pokemonDetail, setPokemonDetail] = useState([]);
 
@@ -73,6 +74,7 @@ function App() {
               <PokemonList
                 pokemon={pokemonDetail}
                 setOpenModal={setModalOpen}
+                setPokemonModalData={setPokemonModalData}
               />
             )}
           </div>
@@ -86,9 +88,11 @@ function App() {
           />
         </Content>
       </Layout>
-      <PokemonModal openModal={modalOpen} setOpenModal={setModalOpen}>
-        a
-      </PokemonModal>
+      <PokemonModal
+        openModal={modalOpen}
+        setOpenModal={setModalOpen}
+        data={pokemonModalData}
+      />
     </>
   );
 }

@@ -1,3 +1,7 @@
+body {
+  margin: 0 !important;
+}
+
 .header {
   background-color: white;
   display: flex;
@@ -97,6 +101,7 @@
   border-radius: 3px;
   text-transform: capitalize;
   font-size: 10px;
+  border: #374151 solid 1px;
 }
 
 .pokemon-card-cover {
@@ -119,4 +124,18 @@
 .pokemon-card:hover .pokemon-card-img {
   width: 150px;
   height: 150px;
+}
+
+.pokemon-modal-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.pokemon-modal-ability {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }

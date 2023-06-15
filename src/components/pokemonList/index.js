@@ -1,12 +1,17 @@
 import React from "react";
 import PokemonItem from "../pokemonCard";
 
-function PokemonList({ pokemon, setOpenModal }) {
+function PokemonList({ pokemon, setOpenModal, setPokemonModalData }) {
+  const handleOnClick = (item) => {
+    setPokemonModalData(item);
+    setOpenModal(true);
+  };
+
   return (
     <>
       {pokemon?.map((item, i) => (
-        <div onClick={() => setOpenModal(true)}>
-          <PokemonItem item={item} key={i} />
+        <div onClick={() => handleOnClick(item)} key={i}>
+          <PokemonItem item={item} />
         </div>
       ))}
     </>
