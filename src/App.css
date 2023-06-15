@@ -1,38 +1,122 @@
-.App {
-  text-align: center;
+.header {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.content {
+  padding: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.pokemon-list {
+  padding: 50px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.pokemon-card {
+  position: relative;
+  width: 200px;
+  cursor: pointer;
+  text-transform: capitalize;
+  border: #374151 solid 10px;
+  border-radius: 20px;
+}
+
+.pokemon-card-desc {
+  padding: 10px;
+  background-color: #e5e7eb;
+  border-radius: 0 0 10px 10px;
+}
+
+.pokemon-card-desc h3 {
+  margin: 5px 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.pokemon-card-desc-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pokemon-card-badge {
+  padding: 3px 5px;
+  height: fit-content;
+  border-radius: 14px;
+  background-color: #374151;
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.pokemon-card-id {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 10px;
+  right: 10px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: #374151;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.pokemon-card-desc-content {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  height: 60px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.pokemon-stats-badge {
+  padding: 2px 4px;
+  background-color: white;
+  border-radius: 3px;
+  text-transform: capitalize;
+  font-size: 10px;
+}
+
+.pokemon-card-cover {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
+  height: 200px;
+}
+
+.pokemon-card-img {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.pokemon-card:hover .pokemon-card-img {
+  width: 150px;
+  height: 150px;
 }
