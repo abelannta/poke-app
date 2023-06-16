@@ -24,9 +24,9 @@ function App() {
     setParams((prev) => ({ ...prev, page: current, limit: limit }));
   };
 
-  const getPokemonList = () => {
+  const getPokemonList = async () => {
     setLoading(true);
-    const res = getPokemon({
+    const res = await getPokemon({
       limit: params.limit,
       offset: params.page * params.limit - params.limit,
     })

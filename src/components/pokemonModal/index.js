@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Modal, Descriptions } from "antd";
+import { Modal, Descriptions, Spin } from "antd";
 
 function PokemonModal({ openModal, setOpenModal, data }) {
   const [ability, setAbility] = useState([]);
+  const [loadingAbility, setLoadingAbility] = useState(false);
 
   const getAbilitiesDesc = async () => {
+    setLoadingAbility(true);
     try {
       const res = await Promise.all(
         data?.abilities?.map((item) => fetch(item.ability.url))
@@ -14,6 +16,7 @@ function PokemonModal({ openModal, setOpenModal, data }) {
     } catch (err) {
       console.error(err);
     }
+    setLoadingAbility(false);
   };
 
   const getEnglishDesc = (item) => {
@@ -82,14 +85,27 @@ function PokemonModal({ openModal, setOpenModal, data }) {
           )}
         </Descriptions.Item>
         <Descriptions.Item label="Abilities" span={3}>
-          <div className="pokemon-modal-abiity">
-            {ability.map((item, i) => (
-              <div style={{ textAlign: "left" }} key={i}>
-                <h3>{item.name}</h3>
-                <p>{getEnglishDesc(item)}</p>
-              </div>
-            ))}
-          </div>
+          {loadingAbility ? (
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Spin />
+            </div>
+          ) : (
+            <div className="pokemon-modal-abiity">
+              {ability.map((item, i) => (
+                <div style={{ textAlign: "left" }} key={i}>
+                  <h3>{item.name}</h3>
+                  <p>{getEnglishDesc(item)}</p>
+                </div>
+              ))}
+            </div>
+          )}
         </Descriptions.Item>
       </Descriptions>
     </Modal>
