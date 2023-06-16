@@ -18,7 +18,7 @@ function PokemonCard({ item }) {
       </div>
       <div className="pokemon-card-desc">
         <div className="pokemon-card-desc-header">
-          <h3>{item?.name}</h3>
+          <h3 className="limited-lines">{item?.name}</h3>
           <div className="pokemon-card-badge">{item?.types[0]?.type?.name}</div>
         </div>
         <div className="pokemon-card-desc-content">

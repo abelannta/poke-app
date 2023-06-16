@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import icon from "./assets/logo.svg";
 import "./App.css";
-import { Layout, Input, Pagination, Spin, Modal } from "antd";
+import { Layout, Pagination, Spin } from "antd";
 import { getPokemon } from "./lib/pokemon";
 import PokemonList from "./components/pokemonList";
 import axios from "axios";
@@ -56,15 +56,11 @@ function App() {
     getPokemonList();
   }, [params]);
 
-  useEffect(() => {
-    console.log(pokemonDetail);
-  }, [pokemonDetail]);
-
   return (
     <>
       <Layout style={{ backgroundColor: "white" }}>
         <Header className="header">
-          <img src={icon} style={{ width: "200px" }} />
+          <img src={icon} style={{ width: "200px" }} alt="Pokemon Logo" />
         </Header>
         <Content className="content">
           <div className="pokemon-list">

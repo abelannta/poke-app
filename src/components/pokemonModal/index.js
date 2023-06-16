@@ -45,6 +45,7 @@ function PokemonModal({ openModal, setOpenModal, data }) {
         <img
           style={{ width: 200, height: 200 }}
           src={data?.sprites?.other?.dream_world?.front_default}
+          alt={data?.name}
         />
       </div>
       <Descriptions layout="vertical">
