@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import icon from "./logo.svg";
+import icon from "./assets/logo.svg";
 import "./App.css";
 import { Layout, Input, Pagination, Spin, Modal } from "antd";
 import { getPokemon } from "./lib/pokemon";
